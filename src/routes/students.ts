@@ -2,8 +2,24 @@ import { FastifyInstance } from 'fastify'
 import { prisma } from '../lib/prisma'
 import { z } from 'zod'
 
+const schemaSwagger = {
+  schema: {
+    body: {
+      type: 'object',
+      properties: {
+        name: { type: 'string' },
+        age: { type: 'number' },
+        firstSemesterGrade: { type: 'number' },
+        secondSemesterGrade: { type: 'number' },
+        teacherName: { type: 'string' },
+        roomNumber: { type: 'number' },
+      },
+    },
+  },
+}
+
 export async function studentsRoutes(app: FastifyInstance) {
-  app.post('/api/v1/student', async (request) => {
+  app.post('/api/v1/student', schemaSwagger, async (request, reply) => {
     const bodySchema = z.object({
       name: z.string(),
       age: z.number().min(1).max(100),
@@ -33,7 +49,7 @@ export async function studentsRoutes(app: FastifyInstance) {
       },
     })
 
-    return student
+    reply.code(201).send(student)
   })
 
   app.get('/api/v1/students', async () => {
@@ -42,27 +58,30 @@ export async function studentsRoutes(app: FastifyInstance) {
         name: 'asc',
       },
     })
-
     return students
   })
 
-  app.get('/api/v1/student/:id', async (request) => {
+  app.get('/api/v1/student/:id', async (request, reply) => {
     const paramsSchema = z.object({
       id: z.string().uuid(),
     })
 
     const { id } = paramsSchema.parse(request.params)
 
-    const student = await prisma.student.findUniqueOrThrow({
+    const student = await prisma.student.findUnique({
       where: {
         id,
       },
     })
 
-    return student
+    if (!student) {
+      reply.code(404).send({ message: 'student not found' })
+    }
+
+    reply.code(200).send(student)
   })
 
-  app.put('/api/v1/student/:id', async (request) => {
+  app.put('/api/v1/student/:id', schemaSwagger, async (request, reply) => {
     const paramsSchema = z.object({
       id: z.string().uuid(),
     })
@@ -87,7 +106,17 @@ export async function studentsRoutes(app: FastifyInstance) {
       roomNumber,
     } = bodySchema.parse(request.body)
 
-    const student = await prisma.student.update({
+    const studentExists = await prisma.student.findUnique({
+      where: {
+        id,
+      },
+    })
+
+    if (!studentExists) {
+      reply.code(404).send({ message: 'student not found!' })
+    }
+
+    await prisma.student.update({
       where: { id },
       data: {
         name,
@@ -99,20 +128,32 @@ export async function studentsRoutes(app: FastifyInstance) {
       },
     })
 
-    return student
+    reply.code(204).send()
   })
 
-  app.delete('/api/v1/student/:id', async (request) => {
+  app.delete('/api/v1/student/:id', async (request, reply) => {
     const paramsSchema = z.object({
       id: z.string().uuid(),
     })
 
     const { id } = paramsSchema.parse(request.params)
 
+    const student = await prisma.student.findUnique({
+      where: {
+        id,
+      },
+    })
+
+    if (!student) {
+      reply.code(404).send({ message: 'student not found!' })
+    }
+
     await prisma.student.delete({
       where: {
         id,
       },
     })
+
+    reply.code(204).send()
   })
 }
