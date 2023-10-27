@@ -6,7 +6,7 @@
 
 * Construa uma API com um CRUD para armazenar dados dos alunos de uma escola.
 
-* 📋 Os dados a serem armazenados são: **Id**, **nome**, **idade**, **nota do primeiro semestre**, **nota do segundo semestre**, **nome do professor** e **número da sala**.
+* 📋 Os dados a serem armazenados são: ``Id``, ``nome``, ``idade``, ``nota do primeiro semestre``, ``nota do segundo semestre``, ``nome do professor`` e ``número da sala``.
 
 * 🛢️ Os dados deverão ser armazenados em um banco de dados relacional podendo ser (``MySql``, ``SqlServer``, ``Postgres``)
 
