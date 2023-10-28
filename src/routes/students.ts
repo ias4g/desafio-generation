@@ -49,7 +49,7 @@ export async function studentsRoutes(app: FastifyInstance) {
       },
     })
 
-    reply.code(201).send(student)
+    return reply.code(201).send(student)
   })
 
   app.get('/api/v1/students', async () => {
@@ -75,10 +75,10 @@ export async function studentsRoutes(app: FastifyInstance) {
     })
 
     if (!student) {
-      reply.code(404).send({ message: 'student not found' })
+      return reply.code(404).send({ message: 'student not found' })
     }
 
-    reply.code(200).send(student)
+    return reply.code(200).send(student)
   })
 
   app.put('/api/v1/student/:id', schemaSwagger, async (request, reply) => {
@@ -113,7 +113,7 @@ export async function studentsRoutes(app: FastifyInstance) {
     })
 
     if (!studentExists) {
-      reply.code(404).send({ message: 'student not found!' })
+      return reply.code(404).send({ message: 'student not found!' })
     }
 
     await prisma.student.update({
@@ -128,7 +128,7 @@ export async function studentsRoutes(app: FastifyInstance) {
       },
     })
 
-    reply.code(204).send()
+    return reply.code(204).send()
   })
 
   app.delete('/api/v1/student/:id', async (request, reply) => {
@@ -145,7 +145,7 @@ export async function studentsRoutes(app: FastifyInstance) {
     })
 
     if (!student) {
-      reply.code(404).send({ message: 'student not found!' })
+      return reply.code(404).send({ message: 'student not found!' })
     }
 
     await prisma.student.delete({
@@ -154,6 +154,6 @@ export async function studentsRoutes(app: FastifyInstance) {
       },
     })
 
-    reply.code(204).send()
+    return reply.code(204).send()
   })
 }
