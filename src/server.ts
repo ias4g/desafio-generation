@@ -6,7 +6,7 @@ import fastifySwaggerUi from '@fastify/swagger-ui'
 const schema = {
   swagger: {
     info: {
-      title: '@fastify/swagger | challenge generation',
+      title: '@fastify/swagger | challenge generation by Izael Silva',
       description:
         'Construa uma API com um CRUD para armazenar dados dos alunos de uma escola. Os dados a serem armazenados são: ID, NOME, IDADE, NOTA DO PRIMEIRO SEMESTRE, NOTA DO SEGUNDO SEMESTRE, NOME DO PROFESSOR e NÚMERO DA SALA.',
       contact: {
