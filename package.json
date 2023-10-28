@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "18"
+  },
   "scripts": {
-    "dev": "tsx watch src/server.ts",
+    "build": "tsup src",
     "start": "node src/server.js",
-    "build": "tsc",
+    "dev": "tsx watch src/server.ts",
     "lint": "eslint src --ext .ts --fix"
   },
   "keywords": [],
@@ -17,6 +20,7 @@
     "@types/node": "^20.8.8",
     "eslint": "^8.52.0",
     "prisma": "^5.5.2",
+    "tsup": "^7.2.0",
     "tsx": "^3.14.0",
     "typescript": "^5.2.2"
   },
