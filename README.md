@@ -10,7 +10,7 @@
 
 * 🛢️ Os dados deverão ser armazenados em um banco de dados relacional podendo ser (``MySql``, ``SqlServer``, ``Postgres``)
 
-* **</>** A linguagem, framework e ORM são livres, ou seja pode ser usado qualquer tecnologia que usa uma linguagem de programação e um framework para criação do projeto.
+* 👨‍💻 A linguagem, framework e ORM são livres, ou seja pode ser usado qualquer tecnologia que usa uma linguagem de programação e um framework para criação do projeto.
 
 ---
 
@@ -24,4 +24,24 @@
 |4. [fastify](https://github.com/fastify/fastify): Framework web rápido e de baixo custo, para Node.js. Um servidor eficiente implica menor custo de infraestrutura, melhor capacidade de resposta sob carga e usuários satisfeitos.| 4. [typescript](https://github.com/Microsoft/TypeScript): TypeScript é uma linguagem para desenvolvimento de JavaScript em escala de aplicativo |
 |5. [zod](https://github.com/colinhacks/zod): Zod é uma biblioteca de declaração e validação de esquema TypeScript com inferência de tipo estático.| 5. [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped): Definições TypeScript para Node.js |
 
-feito com 💖 por [Izael Silva](https://www.github.com/ias4g) para o desafio online da [Generation Brasil](https://brazil.generation.org/)
+---
+
+### 🧭 Orientações.
+* Não esqueça de implementar o swagger em sua aplicação para criar a documentação e acesso aos endpoints como na imagem abaixo.
+
+![Fastufy Swagger](src/assets/fastify-swagger.png)
+
+* Realize o deploy dessa aplicação em serviços de hospedagem gratuita como [Heroku](https://www.heroku.com/), [Vercel](https://vercel.com/), [Netlify](https://www.netlify.com/), [Render](https://render.com/) etc.
+* Ao final, você precisará disponibilizar o link de acesso dessa aplicação. Para isso, acesse a plataforma do processo seletivo e faça o envio do link na etapa.
+
+---
+
+<br>
+<br>
+
+<p align="center">
+  feito com ❤️ por
+  <a href="https://www.github.com/ias4g">Izael Silva</a>
+  para o desafio online da
+  <a href="https://brazil.generation.org/">Generation Brasil</a>
+</p>
