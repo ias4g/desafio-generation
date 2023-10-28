@@ -33,7 +33,7 @@
 
 * Realize o deploy dessa aplicação em serviços de hospedagem gratuita como [Heroku](https://www.heroku.com/), [Vercel](https://vercel.com/), [Netlify](https://www.netlify.com/), [Render](https://render.com/) etc.
 * Ao final, você precisará disponibilizar o link de acesso dessa aplicação. Para isso, acesse a plataforma do processo seletivo e faça o envio do link na etapa.
-* Projeto em produção hospedado no [Render](https://render.com/), acesse 👉 [Desafio Generatiom em hospedado](https://challenge-generation.onrender.com/documentation)🔗
+> Projeto em produção hospedado no [Render](https://render.com/), acesse 👉 [Desafio Generatiom em hospedado](https://challenge-generation.onrender.com/documentation)🔗
 
 ---
 
