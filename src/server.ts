@@ -3,11 +3,31 @@ import { studentsRoutes } from './routes/students'
 import fastifySwagger from '@fastify/swagger'
 import fastifySwaggerUi from '@fastify/swagger-ui'
 
+const schema = {
+  swagger: {
+    info: {
+      title: '@fastify/swagger | challenge generation',
+      description:
+        'Construa uma API com um CRUD para armazenar dados dos alunos de uma escola. Os dados a serem armazenados são: ID, NOME, IDADE, NOTA DO PRIMEIRO SEMESTRE, NOTA DO SEGUNDO SEMESTRE, NOME DO PROFESSOR e NÚMERO DA SALA.',
+      contact: {
+        name: 'API',
+        url: 'https://www.github.com/ias4g',
+        email: 'izaell.oficial@gmail.com',
+      },
+      version: '8.12.0',
+    },
+  },
+}
+
 const app = fastify()
 
-app.register(fastifySwagger)
+app.register(fastifySwagger, schema)
 
-app.register(fastifySwaggerUi)
+app.register(fastifySwaggerUi, {
+  theme: {
+    title: 'challenge Generation',
+  },
+})
 
 app.register(studentsRoutes)
 
