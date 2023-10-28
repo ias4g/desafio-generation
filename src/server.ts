@@ -11,7 +11,7 @@ const schema = {
         'Construa uma API com um CRUD para armazenar dados dos alunos de uma escola. Os dados a serem armazenados são: ID, NOME, IDADE, NOTA DO PRIMEIRO SEMESTRE, NOTA DO SEGUNDO SEMESTRE, NOME DO PROFESSOR e NÚMERO DA SALA.',
       contact: {
         name: 'API',
-        url: 'https://www.github.com/ias4g',
+        url: 'https://github.com/ias4g/desafio-generation',
         email: 'izaell.oficial@gmail.com',
       },
       version: '8.12.0',
