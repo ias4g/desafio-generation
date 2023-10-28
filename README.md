@@ -35,6 +35,8 @@
 * Ao final, você precisará disponibilizar o link de acesso dessa aplicação. Para isso, acesse a plataforma do processo seletivo e faça o envio do link na etapa.
 > Projeto em produção hospedado no [Render](https://render.com/), acesse 👉 [Desafio Generatiom em hospedado](https://challenge-generation.onrender.com/documentation)🔗
 
+``Obs: as vezes o site da API demora um pouquinho para carregar, devido ser uma hospedagem gratuita!``
+
 ---
 
 <br>
